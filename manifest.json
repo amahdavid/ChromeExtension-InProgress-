@@ -16,14 +16,14 @@
         "default": "Ctrl+Shift+Y",
         "mac": "Command+Shift+Y"
       },
-      "description": "Arrange tabs alphabetically"
+      "description": "Arrange tabs alphabetically in ascending order"
     }, 
     "arrange_tabs_alphabetically_descending": {
       "suggested_key": {
         "default": "Ctrl+Shift+Z",
         "mac": "Command+Shift+Z"
       },
-      "description": "Arrange tabs alphabetically"
+      "description": "Arrange tabs alphabetically in descending order"
     }
   },
   "permissions": ["tabs"]
