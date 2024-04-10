@@ -1,4 +1,4 @@
-function sortTabsAlphabetically(sortDirection) {
+function sortTabsAlphabeticallyBackGround(sortDirection) {
   chrome.tabs.query({}, function (tabs) {
     tabs.sort(function (a, b) {
       if (sortDirection === "asc") {
@@ -16,8 +16,8 @@ function sortTabsAlphabetically(sortDirection) {
 
 chrome.commands.onCommand.addListener(function (command) {
   if (command === "arrange_tabs_alphabetically_ascending") {
-    sortTabsAlphabetically("asc");
+    sortTabsAlphabeticallyBackGround("asc");
   } else if (command === "arrange_tabs_alphabetically_descending") {
-    sortTabsAlphabetically("desc");
+    sortTabsAlphabeticallyBackGround("desc");
   }
 });

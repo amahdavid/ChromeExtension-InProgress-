@@ -25,5 +25,8 @@
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
     "globals": "^15.0.0"
+  },
+  "dependencies": {
+    "@types/chrome": "^0.0.266"
   }
 }
