@@ -80,9 +80,21 @@ button:active {
     font-size: 16px;
 }
 
-#search-btn {
+#next-btn {
     padding: 8px 16px;
     border: none;
+    align-items: right;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#previous-btn {
+    padding: 8px 16px;
+    border: none;
+    align-items: left;
     border-radius: 4px;
     background-color: #4CAF50;
     color: white;
@@ -96,4 +108,8 @@ button:active {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+}
+
+#search-tab{
+    padding: 8px;
 }

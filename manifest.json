@@ -29,6 +29,20 @@
         "mac": "Command+Shift+Z"
       },
       "description": "Arrange tabs alphabetically in descending order"
+    },
+    "move_tab_previous": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+P",
+        "mac": "Command+Shift+P"
+      },
+      "description": "Move the current tab to the left"
+    },
+    "move_tab_next": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+N",
+        "mac": "Command+Shift+N"
+      },
+      "description": "Move the current tab to the right"
     }
   },
   "permissions": ["tabs"]
