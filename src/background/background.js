@@ -1,7 +1,11 @@
-function sortTabsAlphabetically() {
+function sortTabsAlphabetically(sortDirection) {
   chrome.tabs.query({}, function (tabs) {
     tabs.sort(function (a, b) {
-      return a.title.localeCompare(b.title);
+      if (sortDirection === "asc") {
+        return a.title.localeCompare(b.title);
+      } else {
+        return b.title.localeCompare(a.title);
+      }
     });
 
     tabs.forEach(function (tab, index) {
@@ -11,7 +15,9 @@ function sortTabsAlphabetically() {
 }
 
 chrome.commands.onCommand.addListener(function (command) {
-  if (command === "arrange_tabs_alphabetically") {
-    sortTabsAlphabetically();
+  if (command === "arrange_tabs_alphabetically_ascending") {
+    sortTabsAlphabetically("asc");
+  } else if (command === "arrange_tabs_alphabetically_descending") {
+    sortTabsAlphabetically("desc");
   }
 });

@@ -1,7 +1,11 @@
-function sortTabsAlphabetically() {
+function sortTabsAlphabetically(sortDirection) {
   chrome.tabs.query({}, function (tabs) {
     tabs.sort(function (a, b) {
-      return a.title.localeCompare(b.title);
+      if (sortDirection === "asc") {
+        return a.title.localeCompare(b.title);
+      } else {
+        return b.title.localeCompare(a.title);
+      }
     });
 
     tabs.forEach(function (tab, index) {
@@ -13,6 +17,7 @@ function sortTabsAlphabetically() {
 document.addEventListener("DOMContentLoaded", function () {
   var arrangeButton = document.getElementById("arrange-btn");
   arrangeButton.addEventListener("click", function () {
-    sortTabsAlphabetically();
+    var sortDirection = document.getElementById("sort-direction").value;
+    sortTabsAlphabetically(sortDirection);
   });
 });

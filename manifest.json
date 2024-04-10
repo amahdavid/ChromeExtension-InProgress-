@@ -11,10 +11,17 @@
     "default_popup": "src/options/index.html"
   },
   "commands": {
-    "arrange_tabs_alphabetically": {
+    "arrange_tabs_alphabetically_ascending": {
       "suggested_key": {
         "default": "Ctrl+Shift+Y",
         "mac": "Command+Shift+Y"
+      },
+      "description": "Arrange tabs alphabetically"
+    }, 
+    "arrange_tabs_alphabetically_descending": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Z",
+        "mac": "Command+Shift+Z"
       },
       "description": "Arrange tabs alphabetically"
     }
