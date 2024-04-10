@@ -3,7 +3,7 @@ body {
     padding: 0;
     position: relative;
     font-family: Helvetica, Arial, Serif;
-    text-align: center; /* Center text horizontally */
+    text-align: center;
 }
 
 a {
@@ -23,7 +23,7 @@ a:hover {
     min-width: 360px;
     margin: 0 auto;
     position: relative;
-    text-align: center; /* Center text horizontally */
+    text-align: center;
 }
 
 .content {
@@ -47,7 +47,7 @@ footer {
     padding: 16px;
     position: relative;
     bottom: 0;
-    text-align: center; /* Center text horizontally */
+    text-align: center;
 }
 
 #change-btn {
@@ -55,12 +55,13 @@ footer {
 }
 
 button {
-    color: white;
-    cursor: pointer;
-    border: black solid 2px;
+    padding: 8px 16px;
+    border: none;
     border-radius: 4px;
-    background-color: blue;
-    text-transform: uppercase;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 button:hover {
@@ -69,4 +70,30 @@ button:hover {
 
 button:active {
     color: grey;
+}
+
+#search-input {
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#search-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#sort-direction {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
 }
