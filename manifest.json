@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Tab Arranger",
+  "version": "1.0.0",
+
+  "description": "An extension to arrange Chrome tabs alphabetically.",
+  "background": {
+    "service_worker": "src/background/background.js"
+  },
+  "action": {
+    "default_popup": "src/options/index.html"
+  },
+  "commands": {
+    "arrange_tabs_alphabetically": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Arrange tabs alphabetically"
+    }
+  },
+  "permissions": ["tabs"]
+}
