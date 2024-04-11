@@ -15,6 +15,12 @@ a:hover {
     color: darkred;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
 .container {
     display: block;
     width: calc(100% - 32px);

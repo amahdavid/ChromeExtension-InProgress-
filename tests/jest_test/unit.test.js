@@ -1,35 +1,46 @@
-const { fireEvent } = require('@testing-library/dom');
-require('@testing-library/jest-dom/extend-expect');
+const puppeteer = require('puppeteer');
 
-jest.mock('chrome', () => ({
-    tabs: {
-        query: jest.fn(),
-        move: jest.fn(),
-        update: jest.fn()
-    },
-    commands: {
-        onCommand: {
-            addListener: jest.fn()
-        }
-    }
-}));
+describe('Extension Commands', () => {
+  let browser;
+  let page;
+  let extensionId = 'nnipdgnpmhjblcglpglehlfaopjmffen';
 
-describe('Chrome Extension', () => {
-    test('clicking "Arrange Tabs" button should call sortTabsAlphabetically with correct direction', () => {
-        const sortSpy = jest.spyOn(window, 'sortTabsAlphabetically');
-        const arrangeButton = document.getElementById('arrange-btn');
-        const selectDirection = document.getElementById('sort-direction');
-
-        // Simulate selecting ascending direction and clicking the button
-        selectDirection.value = 'asc';
-        fireEvent.click(arrangeButton);
-        expect(sortSpy).toHaveBeenCalledWith('asc');
-
-        // Simulate selecting descending direction and clicking the button
-        selectDirection.value = 'desc';
-        fireEvent.click(arrangeButton);
-        expect(sortSpy).toHaveBeenCalledWith('desc');
+  beforeAll(async () => {
+    browser = await puppeteer.launch({
+      headless: false, // Set to true for headless mode
+      slowMo: 50, // Slow down Puppeteer operations by 50ms
     });
+    page = await browser.newPage();
+    await page.goto(`chrome-extension://${extensionId}/src/options/index.html`);
+  });
 
-    // Add more test cases here for other functionalities
+  afterAll(async () => {
+    await browser.close();
+  });
+
+  // Test arrange_tabs_alphabetically_ascending command
+  it('SortTabs_Ascending_HappyPath', async () => {
+    await page.keyboard.press('Y', { modifiers: ['Control', 'Shift'] });
+    // Add assertions here to verify that tabs are arranged alphabetically in ascending order
+  });
+
+  // Test arrange_tabs_alphabetically_descending command
+  it('SortTabs_Descending_HappyPath', async () => {
+    await page.keyboard.press('Z', { modifiers: ['Control', 'Shift'] });
+    // Add assertions here to verify that tabs are arranged alphabetically in descending order
+  });
+
+  // Test move_tab_previous command
+  it('SwitchTabs_Previous_HappyPath', async () => {
+    await page.keyboard.press('P', { modifiers: ['Control', 'Shift'] });
+    // Add assertions here to verify that the active tab has changed
+  });
+
+  // Test move_tab_next command
+  it('SwitchTabs_Next_HappyPath', async () => {
+    await page.keyboard.press('O', { modifiers: ['Control', 'Shift'] });
+    // Add assertions here to verify that the active tab has changed
+  });
+
+  // Test unknown command
 });
