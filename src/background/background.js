@@ -13,5 +13,3 @@ chrome.commands.onCommand.addListener(function (command) {
     action();
   }
 });
-// this is background.js
-// Path: src/background/background.js
