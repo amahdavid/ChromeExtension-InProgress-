@@ -9,11 +9,11 @@
     "48": "icon.png",
     "128": "icon.png"
   },
-  "background": {
-    "service_worker": "src/background/background.js"
-  },
   "action": {
     "default_popup": "src/options/index.html"
+  },
+  "background": {
+    "service_worker": "src/background/background.js"
   },
   "commands": {
     "arrange_tabs_alphabetically_ascending": {
@@ -39,8 +39,8 @@
     },
     "move_tab_next": {
       "suggested_key": {
-        "default": "Ctrl+Shift+N",
-        "mac": "Command+Shift+N"
+        "default": "Ctrl+Shift+O",
+        "mac": "Command+Shift+O"
       },
       "description": "Move the current tab to the right"
     }
