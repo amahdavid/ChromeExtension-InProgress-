@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Tabranger",
+  "name": "TabRanger",
   "version": "1.0.0",
 
   "description": "An extension to arrange Chrome tabs in several ways.",
