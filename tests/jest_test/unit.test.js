@@ -7,8 +7,13 @@ describe('Extension Commands', () => {
 
   beforeAll(async () => {
     browser = await puppeteer.launch({
-      headless: false, // Set to true for headless mode
-      slowMo: 50, // Slow down Puppeteer operations by 50ms
+      headless: false,
+      slowMo: 50,
+      devtools: true,
+      args: [
+        `--disable-extensions-except=${__dirname}/../..`,
+        `--load-extension=${__dirname}/../..`,
+      ],
     });
     page = await browser.newPage();
     await page.goto(`chrome-extension://${extensionId}/src/options/index.html`);
@@ -21,6 +26,7 @@ describe('Extension Commands', () => {
   // Test arrange_tabs_alphabetically_ascending command
   it('SortTabs_Ascending_HappyPath', async () => {
     await page.keyboard.press('Y', { modifiers: ['Control', 'Shift'] });
+    debugger;
     // Add assertions here to verify that tabs are arranged alphabetically in ascending order
   });
 
