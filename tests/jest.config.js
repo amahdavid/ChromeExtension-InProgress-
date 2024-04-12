@@ -1,10 +1,8 @@
 module.exports = {
   testEnvironment: "node",
   transform: {
-    "^.+\\.js$": "babel-jest",
-    "^.+\\.ts$": "ts-jest",
+    "^.+\\.js$": "babel-jest"
   },
-  type: 'module',
   moduleFileExtensions: ["ts", "js"],
   testTimeout: 10000,
 };

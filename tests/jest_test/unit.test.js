@@ -1,16 +1,17 @@
-import puppeteer from "puppeteer";
-import { sortTabsAlphabetically, navigateTabs } from "../../src/utils/helpers";
+const puppeteer = require("puppeteer");
+const { sortTabsAlphabetically, navigateTabs } = require ("../../src/utils/helpers");
 
 describe("Extension Commands", () => {
-  let browser: puppeteer.Browser;
-  let chromeExtensionPage: puppeteer.Page;
-  let pages: puppeteer.Page[] = [];
+  let browser;
+  let chromeExtensionPage;
+  let pages = [];
   let extensionId = "nnipdgnpmhjblcglpglehlfaopjmffen";
-  const urls: string[] = [
+
+  const urls = [
     "https://leetcode.com/explore/",
     "https://example.com/",
     "https://www.wikipedia.org/",
-    "https://www.google.ca/forms/about/",
+    "https://www.google.ca/forms/about/"
   ];
 
   beforeAll(async () => {
@@ -44,7 +45,7 @@ describe("Extension Commands", () => {
 
   // Test sortTabsAlphabetically command
   test("SortTabs_Ascending_HappyPath", async () => {
-    await sortTabsAlphabetically("asc");
+    sortTabsAlphabetically("asc");
     // Get the titles of all open tabs
     const tabTitles = await Promise.all(
       pages.map(async (page) => {

@@ -1,4 +1,4 @@
-export function sortTabsAlphabetically(sortDirection) {
+function sortTabsAlphabetically(sortDirection) {
   chrome.tabs.query({}, function (tabs) {
     tabs.sort(function (a, b) {
       if (sortDirection === "asc") {
@@ -14,7 +14,7 @@ export function sortTabsAlphabetically(sortDirection) {
   });
 }
 
-export function navigateTabs(offset) {
+function navigateTabs(offset) {
   chrome.tabs.query({ currentWindow: true }, function (tabs) {
     chrome.tabs.query(
       { active: true, currentWindow: true },
@@ -29,6 +29,8 @@ export function navigateTabs(offset) {
     );
   });
 }
+
+// function to easily close a tab
 
 export const commandMap = {
   arrange_tabs_alphabetically_ascending: () => sortTabsAlphabetically("asc"),
