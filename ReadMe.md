@@ -19,7 +19,7 @@ To use this extension there are some commands
 
 ## Screenshots or GIFS
 ![alt text](demo.gif)
-![alt text](ExtensionUi.png)
+<img src="ExtensionUi.png" alt="Extension UI" width="400" height="300">
 
 ## Permissions
 - This extension request permissions for only tabs
